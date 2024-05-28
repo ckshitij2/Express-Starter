@@ -1,0 +1,22 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "description": "Express Test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Kshitij chauhan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.1"
+  },
+  "nodemonConfig": {
+    "ext": "js,html"
+  }
+}
