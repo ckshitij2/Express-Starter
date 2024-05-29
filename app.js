@@ -3,21 +3,24 @@ const bodyParser=require('body-parser')
 const adminRoutes=require('./routes/admin')
 const shopRoutes=require('./routes/shop')
 const path=require('path')
-const { engine } = require('express-handlebars');
 const rootDir=require('./util/path')                                                               
 const app=express();
 
 // When wan to use pug as a engine
 // app.set('view engine','pug')
 
-app.engine('hbs',engine({
-    extname: 'hbs',
-    layoutDir:'views/layouts/',
-    defaultLayout: 'main-layout' // Disable default layout
-}))
-app.set('view engine','hbs')
+// When you use handlebars
+// const { engine } = require('express-handlebars');
+// app.engine('hbs',engine({
+//     extname: 'hbs',
+//     layoutDir:'views/layouts/',
+//     defaultLayout: 'main-layout' // Disable default layout
+// }))
+// app.set('view engine','hbs')
 
-app.set('views','views')
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.static(path.join(rootDir,"public")))
 
